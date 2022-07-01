@@ -1,0 +1,28 @@
+server:
+  dev:
+    enabled: true
+  ingress:
+    enabled: true
+    hosts:
+      - host: vault.example.com
+  image:
+    tag: 1.11.0
+ui:
+  enabled: true
+csi:
+  enabled: true
+
+auditstorage:
+  enabled: true
+  size: 1Gi
+datastorage:
+  enabled: true
+  size: 1Gi
+
+injector:
+  enabled: true
+  # Selectors are defined as a YAML dictionary.
+  # In this example, all namespaces with the label "injection: enabled" are eligible:
+  namespaceSelector:
+    matchLabels:
+      injection: enabled

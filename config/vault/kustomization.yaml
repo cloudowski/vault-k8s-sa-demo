@@ -1,0 +1,10 @@
+resources:
+  - vault-rbac.yaml
+helmCharts:
+  - name: vault
+    includeCRDs: true
+    valuesFile: values.yaml
+    releaseName: vault
+    namespace: default
+    version: "0.20.1"
+    repo: https://helm.releases.hashicorp.com
