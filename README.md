@@ -11,6 +11,10 @@ This repo contains resources for testing Vault with dynamic Kubernetes secrets.
    ```
 
 2. Use port forwarding to port 8200 of the vault instance
+
+   ```
+   kubectl port-forward pod/vault-0 8200:8200
+   ```
 3. Prepare test environment
 
    ```
@@ -22,6 +26,8 @@ This repo contains resources for testing Vault with dynamic Kubernetes secrets.
 
    ```
    export VAULT_ADDR=http://localhost:8200
+
+   # use "root" as a token - it's a server in the dev mode
    vault login 
 
    vault secrets enable kubernetes
